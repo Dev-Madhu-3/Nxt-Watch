@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Cookies from 'js-cookie'
 import { Navigate } from 'react-router-dom'
+import withRouter from "../withRouter"
 
 import {
   AppContainer,
@@ -34,13 +35,12 @@ class LoginForm extends Component {
   }
 
   onSubmitSuccess = jwtToken => {
-    const { history } = this.props
-
+    const navigate = this.props.navigate
     Cookies.set('jwt_token', jwtToken, {
       expires: 30,
       path: '/',
     })
-    history.replace('/')
+    navigate('/')
   }
 
   onSubmitFailure = errorMsg => {
@@ -131,4 +131,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default withRouter(LoginForm)

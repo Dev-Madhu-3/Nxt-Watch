@@ -5,6 +5,7 @@ import { BsMoon, BsBrightnessHigh } from 'react-icons/bs'
 import { FiLogOut } from 'react-icons/fi'
 
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
+import withRouter from '../withRouter'
 
 import {
   LogoLink,
@@ -34,9 +35,9 @@ const Header = props => (
       }
 
       const onClickLogout = () => {
-        const { history } = props
+        const navigate = props.navigate
         Cookies.remove('jwt_token')
-        history.replace('/login')
+        navigate('/login')
       }
 
       return (
@@ -129,4 +130,4 @@ const Header = props => (
   </ThemeAndVideoContext.Consumer>
 )
 
-export default Header
+export default withRouter(Header)
