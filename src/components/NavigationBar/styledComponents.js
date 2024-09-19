@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const NavBar = styled.div`
   display: flex;
+
 `
 
 export const NavigationLgContainer = styled.div`
@@ -14,6 +15,7 @@ export const NavigationLgContainer = styled.div`
   position: fixed;
   top: 60px;
   background-color: ${props => props.bgColor};
+    padding: 20px 0;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -69,6 +71,7 @@ export const ContactNote = styled.p`
   font-family: 'Roboto';
   font-size: 18px;
   color: ${props => props.color};
+  margin-bottom: 30px;
 `
 export const NavigationSmallContainer = styled.nav`
   display: flex;

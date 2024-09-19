@@ -3,18 +3,22 @@ import {Link} from 'react-router-dom'
 
 export const NavbarHeader = styled.nav`
   position: fixed;
+  z-index: 1;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
   height: 60px;
-  width: 100%;
+  width: 97%;
   background-color: ${props => props.bgColor};
+  box-shadow: 1px 1px 10px #0000007c;
+
   @media screen and (min-width: 768px) {
     padding-left: 30px;
     padding-right: 30px;
   }
+
 `
 export const HeaderLogo = styled.img`
   width: 80px;

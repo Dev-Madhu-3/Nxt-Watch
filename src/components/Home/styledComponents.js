@@ -13,12 +13,13 @@ export const HomeContainer = styled.div`
 `
 export const BannerContainer = styled.div`
   background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
-  width: 100%;
+  width: 97%;
   background-size: cover;
   height: 200px;
   display: ${props => props.display};
   justify-content: space-between;
   padding: 20px;
+  margin-top: 20px;
 `
 export const BannerLeftPart = styled.div`
   width: 50%;
@@ -59,7 +60,7 @@ export const SearchContainer = styled.div`
   display: flex;
   border: 1px solid #909090;
   border-radius: 3px;
-  margin: 20px;
+  margin: 40px 20px;
   width: 60%;
   height: 40px;
   @media screen and (min-width: 576px) {
