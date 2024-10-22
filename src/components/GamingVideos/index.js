@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import Cookies from 'js-cookie'
-import { BallTriangle } from 'react-loader-spinner'
-
+import Loader from '../Loader'
 import { SiYoutubegaming } from 'react-icons/si'
 
 import Header from '../Header'
@@ -67,16 +66,7 @@ class GamingVideos extends Component {
 
   renderLoadingView = () => (
     <LoaderContainer data-testid="loader">
-      <BallTriangle
-        height={100}
-        width={100}
-        radius={5}
-        color="#4fa94d"
-        ariaLabel="ball-triangle-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
+      <Loader />
     </LoaderContainer>
   )
 

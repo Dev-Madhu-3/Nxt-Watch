@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Cookies from 'js-cookie'
-import { BallTriangle } from 'react-loader-spinner'
+import { useParams } from 'react-router-dom'
+import Loader from '../Loader'
 
 import Header from '../Header'
 import NavigationBar from '../NavigationBar'
@@ -16,6 +17,7 @@ const apiStatusConstants = {
   failure: 'FAILURE',
   inProgress: 'IN_PROGRESS',
 }
+
 class VideoDetailView extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
@@ -44,10 +46,8 @@ class VideoDetailView extends Component {
   getVideoDetails = async () => {
     this.setState({ apiStatus: apiStatusConstants.inProgress })
 
-    const { match } = this.props
-    const { params } = match
-    const { id } = params
-    // console.log(id)
+    const { id } = this.props
+    console.log(this.props)
     const jwtToken = Cookies.get('jwt_token')
 
     const url = `https://apis.ccbp.in/videos/${id}`
@@ -87,18 +87,8 @@ class VideoDetailView extends Component {
 
   renderLoadingView = () => (
     <LoaderContainer data-testid="loader">
-      <BallTriangle
-        height={100}
-        width={100}
-        radius={5}
-        color="#4fa94d"
-        ariaLabel="ball-triangle-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
+      <Loader />
     </LoaderContainer>
-
   )
 
   renderPlayVideoView = () => {
@@ -161,4 +151,11 @@ class VideoDetailView extends Component {
   }
 }
 
-export default VideoDetailView
+const WithParams = (Component) => {
+
+  const { id } = useParams()
+  return <Component id={id} />
+
+}
+
+export default WithParams(VideoDetailView)
