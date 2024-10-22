@@ -47,7 +47,7 @@ class VideoDetailView extends Component {
     this.setState({ apiStatus: apiStatusConstants.inProgress })
 
     const { id } = this.props
-    console.log(this.props)
+    // console.log(this.props)
     const jwtToken = Cookies.get('jwt_token')
 
     const url = `https://apis.ccbp.in/videos/${id}`
@@ -151,11 +151,12 @@ class VideoDetailView extends Component {
   }
 }
 
-const WithParams = (Component) => {
+const WithParams = (props) => {
 
   const { id } = useParams()
-  return <Component id={id} />
+  return <VideoDetailView {...props} id={id} />
+
 
 }
 
-export default WithParams(VideoDetailView)
+export default WithParams

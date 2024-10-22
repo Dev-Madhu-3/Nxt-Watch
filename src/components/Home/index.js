@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Cookies from 'js-cookie'
-import { BallTriangle } from 'react-loader-spinner'
+import Loader from '../Loader'
 
 import { AiOutlineClose, AiOutlineSearch } from 'react-icons/ai'
 
@@ -95,16 +95,7 @@ class Home extends Component {
 
   renderLoadingView = () => (
     <LoaderContainer data-testid="loader">
-      <BallTriangle
-        height={100}
-        width={100}
-        radius={5}
-        color="#4fa94d"
-        ariaLabel="ball-triangle-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
+      <Loader />
     </LoaderContainer>
   )
 
