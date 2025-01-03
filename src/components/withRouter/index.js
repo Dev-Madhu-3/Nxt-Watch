@@ -1,10 +1,9 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const withRouter = (Component) => {
     return (props) => {
         const navigate = useNavigate()
-        const { id } = useParams
-        return <Component {...props} navigate={navigate} id={id} />
+        return <Component {...props} navigate={navigate} />
     };
 };
 
