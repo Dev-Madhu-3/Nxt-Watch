@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 export const NavBar = styled.div`
   display: flex;
-
 `
 
 export const NavigationLgContainer = styled.div`

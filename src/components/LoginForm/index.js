@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Cookies from 'js-cookie'
-import { Navigate } from 'react-router-dom'
+import { Navigate} from 'react-router-dom'
 import withRouter from "../withRouter"
 
 import {

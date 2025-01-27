@@ -1,4 +1,4 @@
-import { Navigate, } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 const ProtectedRoute = ({ element }) => {
